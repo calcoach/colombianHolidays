@@ -7,9 +7,10 @@ package Holidays;
 
 import java.time.LocalDate;
 import java.time.Month;
-import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 import util.CalendarUtil;
 
 /**
@@ -20,7 +21,7 @@ public class Holidays {
     
    int year;
    public  Set<LocalDate> holidayDates = new HashSet<>();
-   public ArrayList<String> nameHolidays = new ArrayList();
+   public Map<Integer, String> nameHolidays = new TreeMap<Integer,String>();
    
    
    public Holidays(int year){
@@ -38,10 +39,13 @@ public class Holidays {
        //nuevo año
        LocalDate newYear = LocalDate.of(year, Month.JANUARY, 1);
        this.holidayDates.add(newYear);
+       nameHolidays.put(newYear.getDayOfYear(),"Año nuevo");
        
        //reyes magos
        LocalDate wiseMen = LocalDate.of(year, Month.JANUARY, 6);
-       this.holidayDates.add(moveToMonday(wiseMen));
+       wiseMen = moveToMonday(wiseMen);
+       this.holidayDates.add(wiseMen);
+       
        
        //san jose
        LocalDate saintJose = LocalDate.of(year, Month.MARCH, 19);
