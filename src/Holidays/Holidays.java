@@ -7,6 +7,7 @@ package Holidays;
 
 import java.time.LocalDate;
 import java.time.Month;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 import util.CalendarUtil;
@@ -19,6 +20,7 @@ public class Holidays {
     
    int year;
    public  Set<LocalDate> holidayDates = new HashSet<>();
+   public ArrayList<String> nameHolidays = new ArrayList();
    
    
    public Holidays(int year){
@@ -97,6 +99,11 @@ public class Holidays {
        this.holidayDates.add(chrismasDay);
        
    }
+   
+   public String getNameHolidays(LocalDate date){
+
+        return nameHolidays.get(date.getDayOfYear());
+    }
    
    public Set<LocalDate> getHolidays(){
        return this.holidayDates;
