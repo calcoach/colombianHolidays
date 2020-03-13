@@ -45,62 +45,78 @@ public class Holidays {
        LocalDate wiseMen = LocalDate.of(year, Month.JANUARY, 6);
        wiseMen = moveToMonday(wiseMen);
        this.holidayDates.add(wiseMen);
-       
+       nameHolidays.put(moveToMonday(wiseMen).getDayOfYear(), "Reyes Magos");
        
        //san jose
        LocalDate saintJose = LocalDate.of(year, Month.MARCH, 19);
-       this.holidayDates.add(moveToMonday(saintJose));
+       saintJose = moveToMonday(saintJose);
+       this.holidayDates.add(saintJose);
+       nameHolidays.put(saintJose.getDayOfYear(), "Dia de San Jose");
        
         //Jueves Santo
        this.holidayDates.add(easterSunday.minusDays(3));
+       nameHolidays.put(easterSunday.minusDays(3).getDayOfYear(), "Jueves Santo");
        
        //Viernes Santo
        this.holidayDates.add(easterSunday.minusDays(2));
+       nameHolidays.put(easterSunday.minusDays(2).getDayOfYear(),"Viernes Santo");
        
        //Dia del trabajo
        LocalDate workDay = LocalDate.of(year, Month.MAY, 1);
        this.holidayDates.add(workDay);
+       nameHolidays.put(workDay.getDayOfYear(), "Dia del Trabajo");
        
        //Sagrado corazon   
        this.holidayDates.add(moveToMonday(easterSunday.plusDays(68)));
+       nameHolidays.put(moveToMonday(easterSunday.plusDays(68)).getDayOfYear(),"Sagrado Corazon");
             
        //Ascencion
-       this.holidayDates.add(moveToMonday(easterSunday.plusDays(40)));    
+       this.holidayDates.add(moveToMonday(easterSunday.plusDays(40)));   
+       nameHolidays.put(moveToMonday(easterSunday.plusDays(40)).getDayOfYear(),"Dia de la Ascencion");
        
         //Corpus Cristi
        this.holidayDates.add(moveToMonday(easterSunday.plusDays(60)));
+       nameHolidays.put(moveToMonday(easterSunday.plusDays(60)).getDayOfYear(), "Corpus Cristi");       
        
        //Dia de la independencia
        LocalDate independendDay = LocalDate.of(year, Month.JULY, 20);
        this.holidayDates.add(independendDay);
+       nameHolidays.put(independendDay.getDayOfYear(), "Dia de la independencia");
        
        //Batalla de boyaca
        LocalDate boyacaBattle = LocalDate.of(year, Month.AUGUST, 7);
        this.holidayDates.add(boyacaBattle);
+       nameHolidays.put(boyacaBattle.getDayOfYear(), "Batalla de Bogota");
        
        //Dia de asuncion de la virgen
        LocalDate assuptionMary = LocalDate.of(year, Month.AUGUST, 15);
        this.holidayDates.add(moveToMonday(assuptionMary));
+       nameHolidays.put(moveToMonday(assuptionMary).getDayOfYear(), "Dia de la asuncion de la virgen");
        
        //Dia de la raza
        LocalDate dayOfRace = LocalDate.of(year, Month.OCTOBER, 12);
        this.holidayDates.add(moveToMonday(dayOfRace));
+       nameHolidays.put(moveToMonday(dayOfRace).getDayOfYear(), "Dia de la raza");
        
        //Todos los Santos
        LocalDate AllOfSaints = LocalDate.of(year, Month.NOVEMBER, 1);
        this.holidayDates.add(moveToMonday(AllOfSaints));
+       nameHolidays.put(moveToMonday(AllOfSaints).getDayOfYear(), "Todos los Santos");
        
        //Independencia de Cartegena
        LocalDate cartagenaIndependency = LocalDate.of(year, Month.NOVEMBER, 11);
        this.holidayDates.add(cartagenaIndependency);
+       nameHolidays.put(cartagenaIndependency.getDayOfYear(), "Independencia de Cartagena");
        
        //Inmaculada Concepcion
        LocalDate inmaculateConception = LocalDate.of(year, Month.DECEMBER, 8);
        this.holidayDates.add(inmaculateConception);
+       nameHolidays.put(inmaculateConception.getDayOfYear(), "Inmaculada concepcion");
        
        //Navidad 
        LocalDate chrismasDay = LocalDate.of(year, Month.DECEMBER, 25);
        this.holidayDates.add(chrismasDay);
+       nameHolidays.put(chrismasDay.getDayOfYear(), "Navidad");
        
    }
    
